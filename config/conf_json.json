@@ -1,0 +1,23 @@
+{
+    "spark": {
+        "app_name": "ComplexPySparkApp",
+        "master": "local[*]",
+        "executor_memory": "4g",
+        "executor_cores": 4
+    },
+    "data": {
+        "input_tables": [
+            {"name": "table1", "path": "data/table1.csv", "format": "csv"},
+            {"name": "table2", "path": "data/table2.parquet", "format": "parquet"}
+        ],
+        "output_path": "data/output",
+        "output_format": "parquet"
+    },
+    "transformations": {
+        "rename_columns": [
+            {"old_name": "old_column1", "new_name": "new_column1"},
+            {"old_name": "old_column2", "new_name": "new_column2"}
+        ],
+        "filter_condition": "value_column > 10"
+    }
+}

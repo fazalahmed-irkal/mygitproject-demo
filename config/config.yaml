@@ -1,0 +1,19 @@
+spark:
+  app:
+    name: MyComplexApp
+  master: local[*]
+  executor:
+    memory: 4g
+    cores: 4
+data:
+  input:
+    path: "data/input.csv"
+    format: "csv"
+  output:
+    path: "data/output.parquet"
+    format: "parquet"
+transformations:
+  rename_columns:
+    old_name: "old_column_name"
+    new_name: "new_column_name"
+  filter_condition: "value_column > 10"
